@@ -1,0 +1,179 @@
+<!--
+Disciplina: WEB Standarts
+Autor: Eduardo Elias Ferreira de Lima
+Data: 02/09/2023
+Objetivo: Fazer um site responsivo com Html, CSS e JS
+-->
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Molaine</title>
+</head>
+<body>
+
+    <section id="home">
+       
+            <div class="menu">
+               <p>Molaine Pinturas <i class="fa-solid fa-paint-roller"></i></p>
+               <i class="fa-solid fa-bars" onclick="PuxarMenu()"></i> <!--Função que puxa o menu lateral -->
+            </div>
+
+            <div class="sociais">
+                <i class="fa-brands fa-facebook"></i>
+                <i class="fa-brands fa-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-youtube"></i>
+            </div>
+
+            <div class="color menunavegacao" id="menunavegacao">
+                <div class="fechar" id="fechar" >
+                    <i class="fa fa-times" onclick="FecharMenu()"></i> <!--Função que fecha  o menu lateral -->
+                   
+                </div>
+            
+                <div class="linkados"> <!--Menu escondido que aparece pela função Fecharmenu-->
+                    <nav>
+                        <li><a href="#home">Home</a></li> 
+                        <li><a href="#about">Sobre</a></li> 
+                        <li><a href="#beneficios">Benefícios</a></li> 
+                        <li><a href="#tltema">temas</a></li> 
+                        <li><a href="#contato">Contato</a></li>
+                    </nav>
+                </div>
+            </div>
+          
+    </section>
+
+    <section id="about"> <!--Flexbox da imagem e texto do about-->
+        <div class="color imghome">
+            <img id="tintaimg" src="imgs/tinta1.png" alt="">
+        </div>
+        <div class="txthome">
+            <h1>Molaine Pinturas</h1>
+            <p>- Sua casa ou serviço merece uma pintura de qualidade!</p>
+
+            <p>Nossa empresa de pintura de paredes é especializada em transformar espaços com cores e acabamentos excepcionais. Com uma equipe experiente e materiais de alta qualidade, garantimos resultados impressionantes que tornam sua casa ou escritório ainda mais atraente. Deixe-nos renovar seus ambientes e dar vida às suas ideias de decoração.</p>
+
+            <p><b>Whatsapp</b>: (??) ?????-????</p>
+            <p><b>Atendimento</b>: De segunda à sexta, das 08:00h  às 17:00h.</p>
+
+            <div class="btnzin">
+                <a class="color" href="#contato">Agendar > </a>
+            </div>     
+        </div>
+    </section>
+
+
+    <section class="beneficios" id="beneficios"> <!--Cards dos beneficios-->
+        <h1>Benefícios</h1>
+        <div class="row">
+            <div class="card">
+                <i class="fa-regular fa-credit-card"></i>
+                <h3>Baixo custo</h3>
+            </div>
+            <div class="card">
+                <i class="fa-solid fa-fill-drip"></i>
+                <h3>Qualidade de serviço</h3>
+            </div>
+            <div class="card">
+                <i class="fa-regular fa-clock"></i>
+                <h3>Rapidez com prazos</h3>
+            </div>
+            <div class="card">
+                <i class="fa-regular fa-handshake"></i>
+                <h3>Confiável entre clientes</h3>
+            </div>
+        </div>
+        
+    </section>
+
+    <section class="color tltema" id="tltema">
+        <h1>Trabalhamos com diversos tipos de cores</h1>
+    </section>
+    <section id="temas" class="color">
+        <!--Seção de slides, a cada button Checado, ele puxa a margin-left trazendo uma nova imagem -->
+        <div class="slidershow middle">
+
+            <div class="slides">
+              <input type="radio" name="r" id="r1" checked>
+              <input type="radio" name="r" id="r2">
+              <input type="radio" name="r" id="r3">
+              <input type="radio" name="r" id="r4">
+              <input type="radio" name="r" id="r5">
+              <input type="radio" name="r" id="r6">
+              <div class="slide s1">
+                <img src="imgs/parede_azul.jpg" alt="">
+              </div> 
+              <div class="slide">
+                <img src="imgs/parede_verde.jpeg" alt="">
+              </div>
+              <div class="slide">
+                <img src="imgs/parede_marrom.jpg" alt="">
+              </div>
+              <div class="slide">
+                <img src="imgs/parede_amarela2.jpg" alt="">
+              </div>
+              <div class="slide">
+                <img src="imgs/parede_roxa.png" alt="">
+              </div>
+              <div class="slide">
+                <img src="imgs/parede_vermelha.png" alt="">
+              </div>
+    
+            </div>
+      
+            <div class="navigation">
+              <label for="r1" class="bar" onclick="TrocaCor(1)"></label>
+              <label for="r2" class="bar" onclick="TrocaCor(2)"></label>
+              <label for="r3" class="bar" onclick="TrocaCor(3)"></label>
+              <label for="r4" class="bar" onclick="TrocaCor(4)"></label>
+              <label for="r5" class="bar" onclick="TrocaCor(5)"></label>
+              <label for="r6" class="bar" onclick="TrocaCor(6)"></label>    
+            </div>
+          </div>
+
+    </section>
+
+
+    <section id="contato"> <!--Parte de entrar em contato, com o form -->
+        <h1>Agendar pintura</h1>
+
+        <form action="#" class="contato-form">
+            <input type="text" class="nameZone" placeholder="Nome">
+            <input type="email" class="emailZone" placeholder="Email">
+            <textarea class="msgbtn" placeholder="Mensagem"></textarea>
+            <input type="submit" value="Enviar" class="color btn" id="sendbtn">
+          </form>
+
+    </section>
+
+
+    <!--rodapé do site, contendo algumas informações -->
+
+    <footer id="final" class="color">
+        <p>&copy; 2023 | Criado e desenvolido por <b>Eduardo Elias</b></p>
+        <hr>
+        <p>O site é apenas um trabalho avaliativo da faculdade EAD SENAC, todas informações são fictícias e qualquer semelhança com a realidade é uma mera coincidência.</p>
+
+        <p><b>Referências das fotos usadas:</b></p>
+        <ul>
+            <li><b>Imagem de fundo menu: </b> <a href="https://www.lopes.com.br/blog/decoracao-paisagismo/vai-pintar-paredes-aprenda-a-preparar-a-tinta-de-forma-adequada/" target="new_blank">www.lopes.com.br/blog/decoracao-paisagismo/vai-pintar-paredes-aprenda-a-preparar-a-tinta-de-forma-adequada<a/></li>
+            <li><b>Imagem da tinta: </b><a href="https://www.revprol.com.br/blog/pintura-com-tinta-acrilica-fosca-e-emborrachada-entenda-diferencas/" target="blank">https://www.revprol.com.br/blog/pintura-com-tinta-acrilica-fosca-e-emborrachada-entenda-diferencas/</a></li>
+            <li><b>Imagem slide 01: </b><a href="https://www.westwing.com.br/guiar/parede-azul/" target="blank">https://www.westwing.com.br/guiar/parede-azul/</a></li>
+            <li><b>Imagem slide 02: </b><a href="https://www.westwing.com.br/guiar/tinta-verde/" target="blank">https://www.westwing.com.br/guiar/tinta-verde/</a></li>
+            <li><b>Imagem slide 03: </b><a href="https://www.bemcolar.com/papel-de-parede-couro-marrom-claro-corium.html" target="blank">https://www.bemcolar.com/papel-de-parede-couro-marrom-claro-corium.html</a></li>
+            <li><b>Imagem slide 04: </b><a href="https://www.tuacasa.com.br/parede-amarela/" target="blank">https://www.tuacasa.com.br/parede-amarela/</a></li>
+            <li><b>Imagem slide 05: </b><a href="https://revistacasaejardim.globo.com/Casa-e-Jardim/Decoracao/Ideias/noticia/2020/04/15-ideias-para-usar-os-tons-lilas-e-roxo-na-decoracao-de-casa.html" target="blank">https://revistacasaejardim.globo.com/Casa-e-Jardim/Decoracao/Ideias/noticia/2020/04/15-ideias-para-usar-os-tons-lilas-e-roxo-na-decoracao-de-casa.html</a></li>
+            <li><b>Imagem slide 06: </b><a href="https://decoracaobrasil.com/parede-vermelha-na-sala.html" target="blank">https://decoracaobrasil.com/parede-vermelha-na-sala.html</a></li>
+        
+        </ul>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
